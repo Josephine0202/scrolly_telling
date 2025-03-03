@@ -1,15 +1,60 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+
+import filmCartridge from "../assets/images/110_film_cartridge.png";
+import kodakInstamatic from "../assets/images/kodak_instamatic_110_film.png";
+import hondaAccord from "../assets/images/honda_accord.png";
+import pharmasave from "../assets/images/pharmasave_sisters_boutique.png";
 ---
-<MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<MainLayout title="110-filmens storhed og forfald">
+  <div class="relative w-full bg-amber-400 text-white pb-16">
+    <header class="w-full h-screen flex items-center justify-center bg-gray-900 text-white relative">
+      <Image src={hondaAccord} alt="Honda Accord (symbolsk billede)" class="absolute inset-0 w-full h-full object-cover opacity-50" />
+      <div class="relative text-center px-8 z-10">
+        <h1 class="text-5xl font-bold text-amber-400">Den lille film, der næsten forsvandt</h1>
+        <p class="mt-4 text-lg max-w-xl mx-auto">I 1970’erne var 110-filmen en revolution – et kompakt, brugervenligt format, der gjorde det nemt for alle at tage billeder. Men i 1980’erne ramte nedturen...</p>
+      </div>
+    </header>
+
+    <section class="max-w-4xl mx-auto py-16 px-8 mt-15">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-semibold text-white">110-filmens storhedstid</h2>
+          <p class="mt-4 text-lg">Den lille filmkassette gjorde kameraerne lette og bærbare. Det blev hurtigt en favorit blandt amatører og rejsefotografer.</p>
+        </div>
+        <div>
+          <Image src={filmCartridge} alt="110 film cartridge" class="shadow-lg" />
+          <p class="text-sm text-white mt-2">Clément Bucco-Lechat, CC BY-SA 3.0</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-10xl mx-auto py-8 px-8 bg-red-900 mt-15">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <Image src={kodakInstamatic} alt="Kodak Instamatic 230 110 film" class="shadow-lg ml-16" />
+          <p class="text-sm text-white mt-2 ml-16">Joost J. Bakker, CC BY 2.0</p>
+        </div>
+        <div>
+          <h2 class="text-4xl font-semibold text-white">Nedturen i 80’erne</h2>
+          <p class="mt-4 text-lg max-w-md">I 1980'erne begyndte 110-filmen at miste terræn. 35mm kompaktkameraer overtog markedet, og forbrugerne søgte bedre billedkvalitet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto py-16 px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-semibold text-white">110-filmens genoplivning</h2>
+          <p class="mt-4 text-lg">Lomography har spillet en central rolle i at bringe formatet tilbage. Analog fotografering har oplevet en genopblomstring.</p>
+        </div>
+        <div>
+          <Image src={pharmasave} alt="PharmaSave Sisters Boutique" class="shadow-lg" />
+          <p class="text-sm text-white mt-2">Matthew Paul Argall, CC BY 2.0</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </MainLayout>
